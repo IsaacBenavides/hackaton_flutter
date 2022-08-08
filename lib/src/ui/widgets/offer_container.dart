@@ -56,25 +56,14 @@ class OfferContainer extends StatelessWidget {
                       textOverflow: TextOverflow.ellipsis,
                     ),
                     SizedBox(height: constraints.maxHeight * 0.05),
-                    Row(
-                      children: [
-                        CustomText(
-                          text: offer.company ?? "Sin compa",
-                          fontSize: responsive.dp(1.3),
-                          maxLine: 2,
-                          textOverflow: TextOverflow.ellipsis,
-                        ),
-                        CustomText(
-                          text: " - ",
-                          fontSize: responsive.dp(1.3),
-                          color: Colors.grey,
-                        ),
-                        CustomText(
-                          text: offer.city ?? "",
-                          fontSize: responsive.dp(1.3),
-                          color: Colors.grey,
-                        ),
-                      ],
+                    SizedBox(
+                      width: constraints.maxWidth * .7,
+                      child: CustomText(
+                        text: offer.company ?? "",
+                        fontSize: responsive.dp(1.3),
+                        maxLine: 2,
+                        textOverflow: TextOverflow.ellipsis,
+                      ),
                     ),
                     SizedBox(height: constraints.maxHeight * 0.06),
                     CustomText(

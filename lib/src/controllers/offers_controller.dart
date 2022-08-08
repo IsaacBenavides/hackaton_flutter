@@ -23,10 +23,10 @@ class OffersController extends ChangeNotifier {
     if (_offers?.next != null) {
       try {
         await Future.delayed(const Duration(seconds: 1));
-        final Offers newOffers = await getAllOffersUseCase.call();
-        _offers!.copyWith(
-            next: newOffers.next,
-            offers: [...(_offers?.offers ?? []), ...(newOffers.offers ?? [])]);
+        final Offers newOffers =
+            await getAllOffersUseCase.next(url: _offers!.next);
+        _offers!.offers?.addAll(newOffers.offers!);
+        _offers!.next = newOffers.next;
         notifyListeners();
       } catch (e) {
         rethrow;

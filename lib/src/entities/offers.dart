@@ -7,9 +7,9 @@ class Offers {
   });
 
   final int? count;
-  final dynamic next;
+  dynamic next;
   final dynamic previous;
-  final List<Offer>? offers;
+  List<Offer>? offers;
 
   Offers copyWith({
     int? count,
